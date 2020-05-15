@@ -1,7 +1,7 @@
 
-import array
+givenArray = input('enter the array :').split()
 
-givenArr = array.array('i', [1, 3, 5, 2, 4, 6, 7])
+givenArray = [int(x) for x in givenArray]
 
 def sortArray(arrayToSort):
     count = 0
@@ -19,7 +19,7 @@ def sortArray(arrayToSort):
 def displayArrayElements(arrayToDisplay): 
     print("Sorted Array to display: ")
     for i in range(len(arrayToDisplay)):
-        print(arrayToDisplay[i])
+        print(arrayToDisplay[i], end=" ")
 
 def swapElement(arr, indexA, indexB):
     temp = arr[indexB]
@@ -27,7 +27,8 @@ def swapElement(arr, indexA, indexB):
     arr[indexA] = temp
     return True
 
-minCount = sortArray(givenArr)
-# displayArrayElements(givenArr)
+minCount = sortArray(givenArray)
+displayArrayElements(givenArray)
 
-print('Minimum number of swaps required:', minCount)
+print()
+print('Number of swaps required:', minCount)
