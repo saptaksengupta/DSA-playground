@@ -32,6 +32,34 @@ class SinglyLinkedList:
         
         temp.next = newNode
 
+    def printNumberOfNodes(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+        
+        print('Number of nodes in this list is: ', count)
+    
+    def insertAtGivenPosition(self, data, position):
+
+        if position == 1:
+            self.prependNode(data)
+            return True
+        
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            if position - 1 == count:
+                newNode = Node(data)
+                newNode.next = temp.next
+                temp.next = newNode
+                return True
+            temp = temp.next
+        
+        return False
+        
 
 if __name__ == "__main__":
     myList = SinglyLinkedList()
@@ -40,8 +68,13 @@ if __name__ == "__main__":
     myList.head.next = Node(6)
     myList.prependNode(3)
     myList.appendNode(11)
-    myList.printList()
-        
+    myList.printList() 
+    print()
+    resp = myList.insertAtGivenPosition(8, 1)
+    if resp:
+        myList.printList()
+    else:
+        print('Enter a valid position.')
     
 
 
