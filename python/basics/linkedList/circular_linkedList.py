@@ -19,9 +19,6 @@ class CircularLinkedList:
             if temp == self.head:
                 break
             
-
-
-
 if __name__ == "__main__":
     myList = CircularLinkedList()
 
