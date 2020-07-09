@@ -43,17 +43,46 @@ def postorderTraversal(root):
         print(root.val)
 
 
+def levelOrderTraversal(root): 
+    h = getHeight(root)
+    for x in range(1, h + 1):
+        printLevel(root, x)
 
-r = Node(50)
 
-insertNode(r, Node(40) )
-insertNode(r, Node(60) )
-insertNode(r, Node(45) )
-insertNode(r, Node(55) )
+def printLevel(node: Node, level: int):
 
-inorderTraversal(r)
+    if node is Node:
+        return None
+    
+    if level is 1:
+        print(node.val, end=' ')
+    elif level > 1:     
+        printLevel(node.left, level - 1)
+        printLevel(node.right, level - 1)
+
+
+def getHeight(node):
+    if node is None:
+        return 0
+    
+    lHeight = getHeight(node.left)
+    rHeight = getHeight(node.right)
+
+    return max(lHeight, rHeight) + 1
+
+
+root = Node(10) 
+root.left = Node(11) 
+root.left.left = Node(7) 
+root.left.right = Node(12) 
+root.right = Node(9) 
+root.right.left = Node(15) 
+root.right.right = Node(8) 
+
+inorderTraversal(root)
 print('\n')
-preorderTraversal(r)
+preorderTraversal(root)
 print('\n')
-postorderTraversal(r)
-
+postorderTraversal(root)
+print('\n')
+levelOrderTraversal(root)
