@@ -22,9 +22,9 @@ class threeSum:
 
             while left < right:
                 currentSum = arr[i] + arr[left] + arr[right]
-                if currentSum < 0:
+                if currentSum < self.target:
                     left += 1
-                elif currentSum > 0:
+                elif currentSum > self.target:
                     right -= 1
                 else:
                     self.triplets.append([ arr[i], arr[left], arr[right] ])
