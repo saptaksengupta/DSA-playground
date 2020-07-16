@@ -32,14 +32,14 @@ def inorderTraversal(root):
 def preorderTraversal(root): 
     if root:
         print(root.val)
-        inorderTraversal(root.left)
-        inorderTraversal(root.right)
+        preorderTraversal(root.left)
+        preorderTraversal(root.right)
 
 ## Util function to Print all the nodes By Postorder Traversal.
 def postorderTraversal(root): 
     if root:
-        inorderTraversal(root.left)
-        inorderTraversal(root.right)
+        preorderTraversal(root.left)
+        preorderTraversal(root.right)
         print(root.val)
 
 
@@ -51,7 +51,7 @@ def levelOrderTraversal(root):
 
 def printLevel(node: Node, level: int):
 
-    if node is Node:
+    if node is None:
         return None
     
     if level is 1:
