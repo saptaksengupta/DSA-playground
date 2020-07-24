@@ -5,16 +5,24 @@
 class Solution:
     # Complete the demoFunction function below.
     # You should change the name accordinglly.
-    def reverseInteger(self, n):
+    def reverseInteger(self, x):
         newInt = 0
-        while n > 0:
-            re = n % 10
+        na = x
+        x = abs(x)
+        while x> 0:
+            re = x % 10
             newInt = (newInt * 10) + re
-            n = int(n / 10) 
-        return newInt
+            x = int(x / 10) 
+        
+        if na < 0:
+            newInt = 0 - newInt
 
+        if -(2**31) < newInt < (2**31) - 1:
+            return newInt
+
+        return 0
 
 
 if __name__ == "__main__":
     instance = Solution()
-    print(instance.reverseInteger(123))
+    print(instance.reverseInteger(1534236469))
