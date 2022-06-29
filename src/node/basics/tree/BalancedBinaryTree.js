@@ -3,6 +3,8 @@
 // Author: Saptak Sengupta(deeps.sengupta@gmail.com)
 // Github: https://github.com/saptaksengupta/
 
+// If in a tree, the absollute difference between left and 
+// right subtree is greater than one then it is called as unbalanced binary tree.
 
 function Tree(value) {
     this.value = value;
