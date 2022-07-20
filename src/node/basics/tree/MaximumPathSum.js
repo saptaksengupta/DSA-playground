@@ -3,10 +3,6 @@
 // Author: Saptak Sengupta(deeps.sengupta@gmail.com)
 // Github: https://github.com/saptaksengupta/
 
-// Diameter of binary tree can be calculated as
-// -- Longest path between two nodes
-// -- Path does not need to pass via root.
-
 function Tree(value) {
     this.value = value;
     this.left = null;
