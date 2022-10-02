@@ -1,30 +1,29 @@
-package basics.twoPointers;
-
 public class TwoSum {
 
-    private static boolean isPairMatched(int val, int n, int arr[]) {
-        int i = 0;
-        int j = n - 1;
-        while(i < j) {
-            int sum = arr[i] + arr[j];
-            if (sum == val) {
-                return true;
-            } 
+    private static int[] isPairMatched(int target, int n, int nums[]) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++)
+        {
+            for (int j = 0; j < nums.length; j++)
+            {   
+                sum = nums[i] + nums[j];
+                if (sum == target)
+                {
+                    return new int[] {i,j};
+                }
 
-            if (sum < val) {
-                i+=1;
-            } else if (sum > val) {
-                j -= 1;
             }
         }
-
-        return false;
+        return new int[] {};
     }
 
     public static void main(String[] args) {
         // it will be sorted array.
         int arr[] = { 3, 5, 9, 2, 8, 10, 11 };  
-        int sum = 50;
-        System.out.println(isPairMatched(sum, arr.length, arr));
+        int sum = 8;
+        int[] res = isPairMatched(sum, arr.length, arr);
+        if (res.length > 0) {
+            System.out.println(res[0] + ", " + res[1]);
+        }
     }
 }
