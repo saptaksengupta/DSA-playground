@@ -40,7 +40,6 @@ public class Permutations {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            System.out.println("inside" + permutation.toString() + i);
             if (visited[i]) {
                 continue;
             }
