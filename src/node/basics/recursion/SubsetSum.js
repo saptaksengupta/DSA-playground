@@ -8,9 +8,10 @@ function getSubsetSum(index, sum, subset, array) {
         subset.push(sum);
         return;
     }
-
+    // For pick options
     getSubsetSum(index+1, sum + array[index], subset, array);
 
+    // For non pick options
     getSubsetSum(index + 1, sum, subset, array);
 }
 
